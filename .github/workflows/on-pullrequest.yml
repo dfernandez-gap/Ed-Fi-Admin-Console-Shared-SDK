@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  security-events: write
+  security-events: read-all
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -37,6 +37,8 @@ jobs:
   analyze-code:
     name: Analyze Code
     runs-on: ubuntu-latest
+    permissions:
+      security-events: write
     defaults:
       run:
         shell: pwsh
