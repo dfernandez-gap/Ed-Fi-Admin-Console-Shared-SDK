@@ -42,7 +42,7 @@ jobs:
         shell: pwsh
     steps:
       - name: Checkout the Repo
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Dependency Review ("Dependabot on PR")
         if: ${{ github.event_name == 'pull_request' && !github.event.repository.fork }}
@@ -70,4 +70,3 @@ jobs:
         with:
           name: Event File
           path: ${{ github.event_path }}
-
